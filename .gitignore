@@ -1,5 +1,6 @@
 # Build artifacts
 rpi4-system-monitor
+run_rpi4_system_monitor_tests
 *.o
 *.a
 *.so

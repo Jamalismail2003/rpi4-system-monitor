@@ -12,6 +12,10 @@
 
 #include <stdint.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #define MAX_CPUS 32
 
 /**
@@ -68,5 +72,9 @@ void get_memory_info(uint64_t total_ram, Memory_Info *mem);
  * @sample: Pointer to CPU_Sample structure to fill
  */
 void get_cpu_sample(int fd, int num_cpus, CPU_Sample *sample);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* RPi4_SYSTEM_MONITOR_H */

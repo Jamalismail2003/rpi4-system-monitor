@@ -13,7 +13,7 @@ QNX_TARGET=$(QNX_TARGET)
 endif
 
 PROGRAM = rpi4-system-monitor
-SRCS = src/rpi4-system-monitor.c
+SRCS = src/rpi4-system-monitor.c src/main.c
 OBJS = $(SRCS:.c=.o)
 HEADERS = include/rpi4-system-monitor.h
 
@@ -26,6 +26,8 @@ ifeq ($(TARGET),aarch64)
 else
 	CC = qcc
 endif
+
+.PHONY: all clean install
 
 all: $(PROGRAM)
 
@@ -47,5 +49,3 @@ install: $(PROGRAM)
 		echo "Error: Cannot write to /usr/bin. Try 'sudo make install'"; \
 		exit 1; \
 	fi
-
-.PHONY: all clean install
